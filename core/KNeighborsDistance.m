@@ -8,7 +8,7 @@ function [out1, out2, out3, out4] = KNeighborsDistance(in1, in2, in3, in4, in5, 
 %       distance according to KDist.
 %
 %%=====================================================================
-%% $Author: PhD Student Su ZHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================  

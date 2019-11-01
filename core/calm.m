@@ -24,7 +24,7 @@ function [XRefined, YRefined, inlierPool] = calm(XAndOutlier, YAndOutlier, histD
 % 'inlierPool' are the preserved indeces for inliers.
 %
 %%=====================================================================
-%% $Author: PhD Student Su XHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%===================================================================== 

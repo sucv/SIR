@@ -5,9 +5,6 @@ function [grid, param] = approximateThinPlateSpline(X, Y, grid, config)
 %
 % %%% $ INPUT $%%%%%%%%%%%%%%%%%%%%%%%
 % 'X' and 'Y' are the N-by-2 or N-by-3  control point sets. 
-%       the loosest SIFT threshold, where the 1st and 2nd columns are 
-%       the spatial coordinates, and if applicable, the 3rd and 4th columns are 
-%       the scales and orientations.
 % 'grid' are the object to apply ATPS transformation under the control of
 %       control point sets.
 % 'config' stores the configuration of SIR.
@@ -23,7 +20,7 @@ function [grid, param] = approximateThinPlateSpline(X, Y, grid, config)
 %       computer vision (pp. 21-31). Springer, Berlin, Heidelberg.
 %
 %%=====================================================================
-%% $Author: PhD Student Su ZHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%===================================================================== 

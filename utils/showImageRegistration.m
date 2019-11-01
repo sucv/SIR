@@ -1,7 +1,7 @@
 function showImageRegistration(image_s, image_t, S_x, S_y,  landmarkimage_s, landmarkimage_t, index)
 %showFeatureMatching illustrates the result for image registration.
 %%=====================================================================
-%% $Author: PhD Student Su ZHANG, supervised by Prof. Cuntai Guan.$
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================   

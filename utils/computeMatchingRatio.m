@@ -2,9 +2,9 @@ function [recall, precision, f1Score, TP, FP, TN, FN] = computeMatchingRatio(gro
 %computeMatchingRatio computes the recall, precision f1-score, true
 %       positive,  false positive, true negative and false negative given 
 %       a index and groundTruth.
-
+%
 %%=====================================================================
-%% $Author: M.E. Su ZHANG, supervised by Assoc. Yang YANG. $
+%% $Author: M.E. Su ZHANG$
 %% $Date: Sat, 30 June 2018$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================

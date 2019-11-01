@@ -1,15 +1,14 @@
 function Output=sir_main(S_x, S_y, I_0, reOrderIdx, config)
 % sir_main decides the final output according to the
 %       returned status of sir .
-
-
+%
 % %%% $ INPUT $%%%%%%%%%%%%%%%%%%%%%%%
 % 'S_x' and 'S_y' are the N-by-4 or N-by-2  features extracted by 
-%       the loosest SIFT threshold, where the 1st and 2nd columns are 
+%       the loosest SIFT threshold tau_0, where the 1st and 2nd columns are 
 %       the spatial coordinates, and if applicable, the 3rd and 4th columns are 
 %       the scales and orientations.
 % 'I_0' are the indeces of the seed points extracted by a reliable
-%       SIFT threshold.
+%       SIFT threshold tau.
 % 'reOrderIdx' stores the indeces of the reordered features, which are
 %       constituted by concatenating inliers and candidates.
 % 'config' stores the configuration of SIR.
@@ -20,7 +19,7 @@ function Output=sir_main(S_x, S_y, I_0, reOrderIdx, config)
 % 'SxHat' is the transformed moving points.
 %
 %%=====================================================================
-%% $Author: PhD Student Su ZHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================   

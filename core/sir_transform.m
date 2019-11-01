@@ -3,7 +3,7 @@ function grid = sir_transform(controlPts, grid, param, normal)
 %       from the SIR.
 %
 %%=====================================================================
-%% $Author: PhD Student Su ZHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================  

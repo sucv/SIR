@@ -2,7 +2,7 @@ function [XPruned, YPruned, inlierPool, idxIncrePruned] = pruning(XAndOutlier, Y
 % featureRefineByKNN removes egregious points by pruning. 
 %       The distance between the corresponding inlier points after
 %       transformation should be the minimum. 
-
+%
 %%%% $ INPUT $%%%%%%%%%%%%%%%%%%%%%%%
 % 'XAndOutlier' and 'YAndOutlier' are the feature points extracted by the
 %       loosest YIFT threshold.
@@ -13,7 +13,7 @@ function [XPruned, YPruned, inlierPool, idxIncrePruned] = pruning(XAndOutlier, Y
 % 'intermidatePoolOldReordered' are the indeces for the increment points to be checked.
 % 'iter + 1' is the iteration number.
 % 'config' is the configuration of YIR.
-
+%
 %%%% $ OUTPUT $%%%%%%%%%%%%%%%%%%%%%%%
 % 'XPruned' and 'YPruned' are the preserved inliers. Except for
 %       the first iteration, featureRefineByKNN has no influence on them.
@@ -24,7 +24,7 @@ function [XPruned, YPruned, inlierPool, idxIncrePruned] = pruning(XAndOutlier, Y
 %       handed to featureRefineByYtruc for further consideration.
 %
 %%=====================================================================
-%% $Author: PhD Ytudent Yu XHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================  

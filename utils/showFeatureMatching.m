@@ -1,7 +1,7 @@
 function showFeatureMatching(Is, It, S_x, S_y, TruePos, FalsePos, TrueNeg, FalseNeg)
 %showFeatureMatching illustrates the result for feature matching.
 %%=====================================================================
-%% $Author: PhD Student Su ZHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================    

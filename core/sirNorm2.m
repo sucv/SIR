@@ -2,7 +2,7 @@ function [nS_x, nS_y, normal]=sirNorm2(S_x, S_y, D)
 % sirNorm2 normalizes the feature point sets to have zero mean and unit
 %       standard variation.
 %%=====================================================================
-%% $Author: PhD Student Su ZHANG, supervised by Prof. Cuntai Guan.$
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================   

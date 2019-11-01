@@ -1,8 +1,7 @@
 function [histDistance, graphMatching, affinity] = shapeDist(X, Y, KDistX, KDistY, distOrderX, distOrderY, XIncre, YIncre, iter, config, orientX, orientY)
 % shapeDist returns the chi-square distance, neighborhood relationship
 %       and inter-neighborhood distance
-
-
+%
 %%%% $ INPUT $%%%%%%%%%%%%%%%%%%%%%%%
 % ’X‘ and 'Y' are the preserved inliers.
 % 'KDist' and 'distOrder' are the distance and index matrces concerning
@@ -16,7 +15,7 @@ function [histDistance, graphMatching, affinity] = shapeDist(X, Y, KDistX, KDist
 % 'graphMatching' is the neighborhood relationship. if iter >= 0, the
 %       intra-neighborhood distance is involved for regularization.
 % 'affinity' is the neighborhood distance.
-
+%
 %%=====================================================================
 %% $Author: PhD Student Su XHANG, supervised by Prof. Cuntai Guan. $
 %% $Date: Mon, 28 Oct 2019$
@@ -135,7 +134,7 @@ function [nNeighbors] = KNeighborsPos(pts, distOrder)
 % according to the index matrix distOrder for a point set pts.
 %
 %%=====================================================================
-%% $Author: PhD Student Su XHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================  

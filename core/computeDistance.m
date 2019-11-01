@@ -2,7 +2,7 @@ function [distance] = computeDistance(in1, in2, in3)
 % computeDistance returns the point-wise distance for in1 and in2.
 %%=====================================================================
 %%=====================================================================
-%% $Author: PhD Student Su ZHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%===================================================================== 

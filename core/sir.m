@@ -12,7 +12,7 @@ function [Output]=sir(nS_x, nS_y, I_0, reOrderIdx, config)
 % 'reOrderIdx' stores the indeces of the reordered features, which are
 %       constituted by concatenating inliers and candidates.
 % 'config' stores the configuration of SIR.
-
+%
 %%%% $ OUTPUT $%%%%%%%%%%%%%%%%%%%%%%%
 % 'IPri' is the intermediate inlier pool I' at the last iteration.
 % 'IAst' is the final inlier set I*.
@@ -23,9 +23,9 @@ function [Output]=sir(nS_x, nS_y, I_0, reOrderIdx, config)
 %       neighborhood, at which time IPri will be treated as the inlier set.
 %       We find that this treatment can improve the performance on image 
 %       retrieval tasks.
-
+%
 %%=====================================================================
-%% $Author: PhD Student Su ZHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================   
@@ -169,15 +169,21 @@ function [Output]=sir(nS_x, nS_y, I_0, reOrderIdx, config)
     Output.flag = flag;
 
 function [intermidatePool] = computeIncreIdx(ptsNum, initSeedNum, iter, intermidatePoolOld, inlierPool)
-    % computeIncreIdx returns the indeces of the upcoming
-    %       increment points .
-    %
-    % 'ptsNum' is the number of all the points. 
-    % 'initSeedNumber' is the number of the initial seed points.
-    % 'iter' is the current iteration number.
-    % 'intermidatePoolOld' is the last increase index, the last entry +1 is where
-    %       we start at current iteration.
-    % 'inlierPool' is the currently preserved inlier index.
+% computeIncreIdx returns the indeces of the upcoming
+%       increment points .
+%
+% 'ptsNum' is the number of all the points. 
+% 'initSeedNumber' is the number of the initial seed points.
+% 'iter' is the current iteration number.
+% 'intermidatePoolOld' is the last increase index, the last entry +1 is where
+%       we start at current iteration.
+% 'inlierPool' is the currently preserved inlier index.
+%
+%%=====================================================================
+%% $Author: PhD Student Su ZHANG$
+%% $Date: Mon, 28 Oct 2019$
+%% $Contact: sorazcn@gmail.com$
+%%=====================================================================
     
     inlierNum = length(inlierPool);
     intermidatePoolHead = intermidatePoolOld(end)+1;
