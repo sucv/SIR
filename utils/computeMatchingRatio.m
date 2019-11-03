@@ -21,7 +21,7 @@ function [recall, precision, f1Score, TP, FP, TN, FN] = computeMatchingRatio(gro
     TN=intersect(N,N2);
     FN=setdiff(N2, TN);
 
-    recall = length(TP)/length(groundTruth);
-    precision = length(TP)/(length(TP)+length(FP));
-    f1Score = 2 * (recall * precision) / (recall + precision);  
+    recall = length(TP)/(length(groundTruth) + eps);
+    precision = length(TP)/(length(TP)+length(FP) + eps);
+    f1Score = 2 * (recall * precision) / (recall + precision + eps);  
 end

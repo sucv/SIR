@@ -1,0 +1,31 @@
+clear all;
+close all;
+result=load('IReg_RS_result.mat');
+result=result.IReg_RS_result;
+labe=1:40;
+sir=result(:,1); sir_rmse=mean(sir);sir_std=std(sir);
+
+figure;
+axes('position', [0.05 0.05 0.95 0.63]);
+axis([0 40 0 20]);
+hold on;
+grid on;
+plot(labe,result(:,1),'-pk','LineWidth',2 );hold on;
+set(gca,'XLim',[0 41]);
+set(gca,'XTick',[0:2:40]);
+set(gca, 'FontSize', 14,'fontweight','bold');
+led=legend('SIR: 3.07\pm3.07','Orientation','vertical','Location','north');
+legend('boxoff');
+set(led,'FontSize',20);
+set(led,'Position',[-0.05 0.20 1 1]);
+set(gca,'XMinorTick','on','YMinorTick','on');
+grid(gca,'minor')
+grid on;
+ax = gca;
+outerpos = ax.OuterPosition;
+ti = ax.TightInset; 
+left = outerpos(1) + ti(1);
+bottom = outerpos(2) + ti(2);
+ax_width = outerpos(3) - ti(1) - ti(3);
+ax_height = outerpos(4) - ti(2) - ti(4);
+ax.Position = [left*(-0.35) bottom*(3.2) ax_width*(0.83) ax_height*(1.25)];

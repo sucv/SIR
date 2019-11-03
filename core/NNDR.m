@@ -25,7 +25,8 @@ function [S_x, S_y,  seedPtsIdx, reOrderIdx] = NNDR(fs, ft, ds, dt, tau_0, tau)
     
     % Error prevention
     if ~exist('vl_ubcmatch')
-        error('vl_ubcmatch function is not defined. Please run vl_setup.m from your VLFEAT toolbox to load vl_ubcmatch function.');
+        error('MyComponent:incorrectType',...
+            'vl_ubcmatch function is not defined. \nPlease run vl_setup.m from your VLFEAT toolbox to load vl_ubcmatch function. \nIt can be downloaded from http://www.vlfeat.org/download.html. \nPlease follow http://www.vlfeat.org/install-matlab.html for either one-time or permanent setup.');
     end
     
     [matchesLoose, ~] = vl_ubcmatch(ds, dt,tau_0) ;

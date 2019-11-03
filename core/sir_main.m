@@ -51,17 +51,24 @@ function Output=sir_main(S_x, S_y, I_0, reOrderIdx, config)
     % Output
     Output.normal = normal;
     Output.SxHat = transformedS_x;
-    
-    if ~Output.flag
+    Output.controlPts = I_x;
+    if ~Output.flag % Everything goes well
         Output.I_x = I_x; Output.I_y = I_y;
         Output.index = Output.IAst;
-    else
-        if ~isempty(Output.IPri)
+    else % Sir broken
+        if ~isempty(Output.IPri) % If the intermediate index exists
+            [~, Output.param] = approximateThinPlateSpline(...
+                S_x(Output.IPri, 1:2), S_y(Output.IPri, 1:2), S_x(Output.IPri, 1:2), config);
             Output.I_x = S_x(Output.IPri, 1:2); Output.I_y = S_y(Output.IPri, 1:2);
-            Output.index = Output.IPri;
-        else 
+            Output.index = Output.IPri; 
+            Output.controlPts = S_x(Output.IPri, 1:2);
+        else % If the intermediate index not exists
+            [~, Output.param] = approximateThinPlateSpline(...
+                S_x(I_0, 1:2), S_y(I_0, 1:2), S_x(I_0, 1:2), config);
             Output.I_x = []; Output.I_y = [];
             Output.index = [];
+            Output.controlPts = S_x(I_0, 1:2); % The control points for applying transformation 
+            % will be the seeds                                                
         end
     end
 end

@@ -1,33 +1,31 @@
 clear;
 close all;
+addpath(genpath('..\sir\'));
 
 load data;
-% Three thresholds are used. Loose and Fine are for SIR, while Default
-% is for other methods.
 tau_0 = 1; tau = 1.3; 
 
-% Extract and reorder SIFT features. The reorder is required
-% for SIR to function. If 1 is indicated for extraction, all overlapped
-% features are removed.
+% Establish the universal set and putative inlier set.
 [S_x, S_y, I_0, reOrderIdx] = NNDR(fs, ft, ds, dt, tau_0, tau);  
 
 config.eta = 0.5;            % TPS smoothness
-config.K=5;                         % Number of nearest inliers
-config.rad=5;     
-config.tan=12;               % Radial and tangential directions of CALM 
-config.epsilon =0.001;        % Threshold for pruning
-config.lambda =1.2;   %Threshold for CALM
-config.omega = 1;
-config.retrieval = 1;
-config.verbose=1;                       % set to 1 for visualization.
+config.K=5;                  % Number of nearest inliers
+config.rad=5;     			 % Bins on the radial direction
+config.tan=12;               % Bins on the tangential direction
+config.epsilon =0.001;       % Threshold for pruning
+config.lambda =1.2;          % Threshold for CALM
+config.omega = 1;			 % Strength for inter-neighborhood distance
+config.retrieval = 1;		 % Whether to perform the retrieval
+config.verbose=1;            % Whether to show logs
 tic;
 [Output]=sir_main(S_x, S_y, I_0, reOrderIdx, config);
 time = toc;
 
 SirIndex = Output.index;
 [recall, precision, f1Score, TP, FP, TN, FN] = computeMatchingRatio(inlierIndex, SirIndex, size(S_x, 1));
+disp(['SIR: recall = ' num2str(recall) ', precision = ' num2str(precision) ', f1-Score = ' num2str(f1Score) '.']);
 showFeatureMatching(image_s, image_t, S_x, S_y, TP, FP, TN, FN);
-disp(['SIR: Recall = ' num2str(recall) ', Precision = ' num2str(precision) ', f1 Score = ' num2str(f1Score) '.']);
+
 
 thetaAst = Output.param;
 source = Output.I_x; 
