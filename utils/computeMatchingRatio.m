@@ -4,8 +4,8 @@ function [recall, precision, f1Score, TP, FP, TN, FN] = computeMatchingRatio(gro
 %       a index and groundTruth.
 %
 %%=====================================================================
-%% $Author: M.E. Su ZHANG$
-%% $Date: Sat, 30 June 2018$
+%% $Author: PhD Student Su ZHANG$
+%% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================
 

@@ -1,7 +1,7 @@
 clear;
 close all;
 
-load FM_RS
+load FM_RS;
 
 
 for i=1:size(FM_RS, 2)

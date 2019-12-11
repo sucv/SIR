@@ -18,7 +18,7 @@ function [S_x, S_y,  seedPtsIdx, reOrderIdx] = NNDR(fs, ft, ds, dt, tau_0, tau)
 %       SIR.
 
 %%=====================================================================
-%% $Author: PhD Student Su ZHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================

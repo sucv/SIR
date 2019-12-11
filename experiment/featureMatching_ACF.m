@@ -1,7 +1,7 @@
 clear;
 close all;
 
-load FM_ACF
+load FM_ACF;
 
 
 for i=1:size(FM_ACF, 2)

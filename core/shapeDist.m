@@ -17,7 +17,7 @@ function [histDistance, graphMatching, affinity] = shapeDist(X, Y, KDistX, KDist
 % 'affinity' is the neighborhood distance.
 %
 %%=====================================================================
-%% $Author: PhD Student Su XHANG, supervised by Prof. Cuntai Guan. $
+%% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
 %% $Contact: sorazcn@gmail.com$
 %%=====================================================================  

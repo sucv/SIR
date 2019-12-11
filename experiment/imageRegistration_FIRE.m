@@ -1,7 +1,7 @@
 clear;
 close all;
 
-load FIRE
+load FIRE;
     
 for i = 1:size(FIRE,2) 
         fs=FIRE(i).fa; ft=FIRE(i).fb; ds=FIRE(i).da; dt=FIRE(i).db;
