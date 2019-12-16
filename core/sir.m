@@ -64,7 +64,7 @@ function [Output]=sir(nS_x, nS_y, I_0, reOrderIdx, config)
         
     
     % Before iteration, the increment points is the initial seeds themselves.
-    [intermidatePool] = computeIncreIdx(ptsNum, initSeedNum, iter, intermidatePoolOld, I_0);
+    [intermidatePool] = computeIncreIdx(ptsNum, initSeedNum, iter, intermidatePoolOld, I_0, config);
     X = XAndOutlier(I_0,:); intermidatePoolOld=intermidatePool; 
     intermidatePool = reOrderIdx(intermidatePool);
     intermidatePoolOldReordered = intermidatePool;
@@ -147,7 +147,7 @@ function [Output]=sir(nS_x, nS_y, I_0, reOrderIdx, config)
         
         iter = iter + 1;
         [intermidatePool] = computeIncreIdx(ptsNum, initSeedNum, iter, ...
-            intermidatePoolOld, inlierPool);
+            intermidatePoolOld, inlierPool, config);
         
         intermidatePoolOld = intermidatePool;
         intermidatePool = reOrderIdx(intermidatePool); 
@@ -168,7 +168,7 @@ function [Output]=sir(nS_x, nS_y, I_0, reOrderIdx, config)
     Output.param = param;
     Output.flag = flag;
 
-function [intermidatePool] = computeIncreIdx(ptsNum, initSeedNum, iter, intermidatePoolOld, inlierPool)
+function [intermidatePool] = computeIncreIdx(ptsNum, initSeedNum, iter, intermidatePoolOld, inlierPool, config)
 % computeIncreIdx returns the indeces of the upcoming
 %       increment points .
 %
@@ -187,7 +187,6 @@ function [intermidatePool] = computeIncreIdx(ptsNum, initSeedNum, iter, intermid
     
     inlierNum = length(inlierPool);
     intermidatePoolHead = intermidatePoolOld(end)+1;
-%     intermidatePoolHead = initSeedNum + 1 + (iter-1) * stepSize;
     intermidatePoolRear = intermidatePoolHead + inlierNum;
 
     if iter <= 0
@@ -195,7 +194,7 @@ function [intermidatePool] = computeIncreIdx(ptsNum, initSeedNum, iter, intermid
         intermidatePoolRear = initSeedNum;
     end
 
-    if intermidatePoolRear > ptsNum
+    if (intermidatePoolRear > ptsNum) || (iter > 0 && config.oneStep)
         intermidatePoolRear = ptsNum;
     end
 

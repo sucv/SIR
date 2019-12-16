@@ -1,7 +1,7 @@
 close all;
 clear;
 
-result=load('FIRE_result');result=result.FIRE_result;
+result=load('IReg_FIRE_result');result=result.FIRE_result;
 num=size(result,1);
 pc=0.1;
 err=[0:pc:30];

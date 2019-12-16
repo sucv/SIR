@@ -1,10 +1,22 @@
 clear;
 close all;
 
+tmp = matlab.desktop.editor.getActive;
+cd(fileparts(tmp.Filename));
+if ismac
+    directory = [pwd '/result/'];
+elseif isunix
+    directory = [pwd '/result/'];
+elseif ispc
+    directory = [pwd '\result\'];
+else
+    disp('Platform not supported')
+end
 
-% dataset = 'U1';
+
+dataset = 'U1';
 % dataset = 'U2';
-dataset = 'U3';
+% dataset = 'U3';
 % dataset = 'U4';
 % dataset = 'H1';
 switch(dataset)
@@ -59,6 +71,7 @@ for i=basis:total
         config.epsilon =0.001;       % Threshold for pruning
         config.lambda =1.6;          % Threshold for CALM
         config.omega = 1;			 % Strength for inter-neighborhood distance
+        config.oneStep = 0;         % Whether to disable the stepwise process
         config.retrieval = 1;		 % Whether to perform the retrieval
         config.verbose = 0;            % Whether to show logs
         tic;
@@ -71,7 +84,9 @@ for i=basis:total
         fprintf('Progres: %.2f%%\n', (n+1)/(queryNum*groupSize)^2*100);
         n = n + 1;
     end
-    save([dataset '_result' '.mat'], 'score','i','j','total','basis','n');
+    save([directory dataset '_result' '.mat'], 'score','i','j','total','basis','n');
 end
 
+fprintf('The result has been saved to: \n');
+disp([directory dataset '_result' '.mat']);
 

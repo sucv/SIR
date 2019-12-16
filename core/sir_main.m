@@ -33,6 +33,7 @@ function Output=sir_main(S_x, S_y, I_0, reOrderIdx, config)
     if ~isfield(config,'epsilon') || isempty(config.epsilon), config.epsilon = 0.001; end
     if ~isfield(config,'lambda') || isempty(config.lambda), config.lambda = 1.2; end
     if ~isfield(config,'omega') || isempty(config.omega), config.omega = 1; end
+    if ~isfield(config,'oneStep') || isempty(config.oneStep), config.oneStep = 0; end
     if ~isfield(config,'retrieval') || isempty(config.retrieval), config.retrieval = 1; end
     if ~isfield(config,'viz') || isempty(config.viz), config.viz = 1; end
     

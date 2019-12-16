@@ -2,6 +2,19 @@ clear;
 close all;
 
 load IReg_RS;
+data = 'IReg_RS';
+
+tmp = matlab.desktop.editor.getActive;
+cd(fileparts(tmp.Filename));
+if ismac
+    directory = [pwd '/result/'];
+elseif isunix
+    directory = [pwd '/result/'];
+elseif ispc
+    directory = [pwd '\result\'];
+else
+    disp('Platform not supported')
+end    
 
 for i = 1:size(IReg_RS, 2)
     
@@ -20,6 +33,7 @@ for i = 1:size(IReg_RS, 2)
     config.epsilon =0.001;       % Threshold for pruning
     config.lambda =1.2;          % Threshold for CALM
     config.omega = 1;			 % Strength for inter-neighborhood distance
+    config.oneStep = 0;         % Whether to disable the stepwise process
     config.retrieval = 1;		 % Whether to perform the retrieval
     config.verbose = 0;            % Whether to show logs
     tic;
@@ -33,4 +47,7 @@ for i = 1:size(IReg_RS, 2)
     disp(['NO.' num2str(i) '; SIR RMSE: ' num2str(rmse) '; MAE: ' num2str(mae) '; MEE: ' num2str(mee) '; runtime = ' num2str(time) '.']);
     IReg_RS_result(i, :) = [rmse mae mee time];
 end
-save('IReg_RS_result.mat', 'IReg_RS_result');
+
+save([directory data '_result' '.mat'], 'IReg_RS_result');
+fprintf('The result has been saved to: \n');
+disp([directory data '_result' '.mat']);

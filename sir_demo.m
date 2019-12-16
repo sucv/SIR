@@ -15,6 +15,7 @@ config.tan=12;               % Bins on the tangential direction
 config.epsilon =0.001;       % Threshold for pruning
 config.lambda =1.2;          % Threshold for CALM
 config.omega = 1;			 % Strength for inter-neighborhood distance
+config.oneStep = 0;         % Whether to disable the stepwise process
 config.retrieval = 1;		 % Whether to perform the retrieval
 config.verbose=1;            % Whether to show logs
 tic;
@@ -32,5 +33,5 @@ source = Output.I_x;
 normal = Output.normal;
 transformedI_x = sir_transform(source, landmarkIs, thetaAst, normal);
 [rmse, mae, mee] = computeError(transformedI_x, landmarkIt);
-disp(['SIR RMSE: ' num2str(rmse) '; MAE: ' num2str(mae) '; MEE: ' num2str(mee) '; runtime = ' num2str(time) '.']);
+disp(['SIR: RMSE = ' num2str(rmse) '; MAE = ' num2str(mae) '; MEE = ' num2str(mee) '; runtime = ' num2str(time) '.']);
 showImageRegistration(image_s, image_t, S_x, S_y, landmarkIs, landmarkIt, SirIndex);
