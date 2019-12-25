@@ -30,6 +30,9 @@ A simple demo is provided for a direct showcase. Experiments on feature matching
     - The features are extracted using vl_sift() function with NNDR threshold 1.0.
 
 # Reference
+
 >[1] Ma, Jiayi, Junjun Jiang, Huabing Zhou, Ji Zhao, and Xiaojie Guo. "Guided locality preserving feature matching for remote sensing image registration." IEEE transactions on geoscience and remote sensing 56, no. 8 (2018): 4435-4447.
+
 >[2] Yang, Kun, Anning Pan, Yang Yang, Su Zhang, Sim Ong, and Haolin Tang. "Remote sensing image registration using multiple image features." Remote Sensing 9, no. 6 (2017): 581.
+
 >[3] Mikolajczyk, Krystian, Tinne Tuytelaars, Cordelia Schmid, Andrew Zisserman, Jiri Matas, Frederik Schaffalitzky, Timor Kadir, and Luc Van Gool. "A comparison of affine region detectors." International journal of computer vision 65, no. 1-2 (2005): 43-72.
