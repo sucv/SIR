@@ -1,8 +1,8 @@
 # Introduction
-This is a matlab implementation for the paper *A Context-aware Locality Measure for Inlier Pool
-Enrichment in Stepwise Image Registration*. This method is named SIR. It is currently under review by IEEE transactions on image processing.
+This is a matlab implementation for the SIR algorithm: 
+- **Su Zhang, Wanjing Zhao, Xuying Hao, Yang Yang, and Cuntai Guan, "A Context-aware Locality Measure for Inlier Pool Enrichment in Stepwise Image Registration", IEEE Transactions on Image Processing, Dec 2019, DOI: 10.1109/TIP.2019.2961480**
 
-SIR is currently for 2-D image registration. It has yet been generalized to a point-set registration method. It can be taken as a progressively generalized version of the GLPM [1] with an improved continuous dissimilarity measure.
+SIR is currently for 2-D feature matching and image registration. It has yet been generalized to a point-set registration method. It can be taken as a progressively generalized version of the GLPM [1] algorithm with an improved continuous dissimilarity measure.
 
 >[1] Ma, Jiayi, Junjun Jiang, Huabing Zhou, Ji Zhao, and Xiaojie Guo. "Guided locality preserving feature matching for remote sensing image registration." IEEE transactions on geoscience and remote sensing 56, no. 8 (2018): 4435-4447.
 
@@ -19,3 +19,14 @@ The outputs of SIR include:
 
 # Environment
 To run the demo, the VLFEAT toolbox is required. It can be downloaded from [this page](http://www.vlfeat.org/download.html "VLFEAT"). Please follow [this instruction](http://www.vlfeat.org/install-matlab.html "VLFEAT setup") for either one-time or permanent setup.
+
+# Experiment
+A simple demo is provided for a direct showcase. Experiments on feature matching, image registration and image retrieval are also provided, together with the dataset. Please make sure the whole project is added to the Matlab working directory.
+
+# Dataset
+- FM_ACF.mat: feature matching on [Affine Covariant Features (ACF)](http://www.robots.ox.ac.uk/~vgg/research/affine/index.html "ACF").
+    - A feature pair is considered as an inlier pair if the overlap score [3] is no less than 0.5.
+- FM_RS.mat and IReg_RS.mat: feature matching and image registration on remote sensing data from [1] and [2], respectively.
+- IReg_FIRE.mat: image registration on [FIRE](https://www.ics.forth.gr/cvrl/fire/ "FIRE").
+- IRet_holiday.mat and IRet_ukbench.mat: image retrieval on [Holiday](http://lear.inrialpes.fr/people/jegou/data.php "Holiday") and [UKBench](https://archive.org/details/ukbench "UKBench"), respectively.
+    - The features are extracted using vl_sift() function with NNDR threshold 1.0.
