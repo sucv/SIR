@@ -16,7 +16,14 @@ function [S_x, S_y,  seedPtsIdx, reOrderIdx] = NNDR(fs, ft, ds, dt, tau_0, tau)
 %       feature set.
 % 'tau' is the NNDR threshold to establish the putative inlier set for the
 %       SIR.
-
+% %%% $ OUTPUT $%%%%%%%%%%%%%%%%%%%%%%%
+% 'S_x' and 'S_y' are the 2-by-N and 2-by-N  universal features determined by the 
+%       loosest NNDR threshold tau_0. They are reordered, where the top |I_0| entries
+%       are putative inliers according to the NNDR threshold tau.
+% 'seedPtsIdx' are the indeces of the seed points extracted by NNDR threshold tau.
+%       It is a simple list of 1:|I_0| since S_x and S_y are reordered.
+% 'reOrderIdx' is the mapping between seedPtsIdx and raw order. 
+%
 %%=====================================================================
 %% $Author: PhD Student Su ZHANG$
 %% $Date: Mon, 28 Oct 2019$
