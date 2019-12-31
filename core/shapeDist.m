@@ -12,9 +12,9 @@ function [histDistance, graphMatching, affinity] = shapeDist(X, Y, KDistX, KDist
 %
 %%%% $ OUTPUT $%%%%%%%%%%%%%%%%%%%%%%%
 % 'histDistance' is the chi-square distance of the histograms.
-% 'graphMatching' is the neighborhood relationship. if iter >= 0, the
-%       intra-neighborhood distance is involved for regularization.
-% 'affinity' is the neighborhood distance.
+% 'graphMatching' is the neighborhood relationship. 
+% 'affinity' is the neighborhood distance. if iter >= 0, 
+%       it is involved for regularization.
 %
 %%=====================================================================
 %% $Author: PhD Student Su ZHANG$
